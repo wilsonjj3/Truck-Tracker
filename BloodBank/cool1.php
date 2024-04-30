@@ -32,7 +32,7 @@ form{
     border: 10px ridge #00526B;
     color: white;
     padding: 20px;
-    background-image: url("beat1.jpg");
+    background-image: url("test.png");
     background-size: cover;
     background-position: center;
 }
