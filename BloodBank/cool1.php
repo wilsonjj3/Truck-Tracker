@@ -8,7 +8,7 @@ body{
 
 
 div.page-wrapper{
-    background-image: url("circuit.png");
+    background-image: url("truck.png");
     border: 10px ridge #1C6D88;
     text-align: center;
     margin-left: auto;
@@ -71,7 +71,7 @@ form{
 }
 
 #table td{
-    background-image: url("circuit.png");
+    background-image: url("truck.png");
 }
 
 
