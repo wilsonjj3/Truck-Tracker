@@ -1,3 +1,3 @@
 <?php
-echo "<img src=\"cross.png\" alt=\"Italian Trulli\"> <h1>Blood R Us Database</h1> ";
+echo "<img src=\"mater.png\" alt=\"Italian Trulli\"> <h1>Truck Tracker Database</h1> ";
 ?>

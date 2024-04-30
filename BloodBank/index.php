@@ -1,17 +1,16 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>BloodRUs - Home</title>
+        <title>Truck Tracker - Home</title>
         <link href="cool1.php" rel="stylesheet"/>
     </head>
 
     <body>
 
 
-    <div  class="page-wrapper">
+    <div class="page-wrapper">
         <?php include 'header.php';?>
 
-        <p id="info">***Before Adding any other entries, Populate the <strong>Nurse</strong> table with at least one entry <strong>before</strong> populating the <strong>Unit Number</strong> table with at least one entry</p>
         <h2>Choose an Option Below:</h2>
 
 

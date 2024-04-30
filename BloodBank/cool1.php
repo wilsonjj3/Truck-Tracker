@@ -1,5 +1,5 @@
 body{
-    background-image: url("hospital1.png");
+    background-image: url("highway.png");
     text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
