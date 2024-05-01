@@ -56,7 +56,7 @@ function displayallData()
 }
 function goback() {
     ?>
-    <form action="BloodRUs_Add_User.php" method="post" >
+    <form action="TruckTracker_Add_User.php" method="post" >
         <input type="submit" value="Go back to Previous Page"> <br />
     </form>
     <?php

@@ -1,7 +1,8 @@
 <html xmlns="http://www.w3.org/1999/html">
+    <!--  -->
     <head>
         <meta charset="utf-8"/>
-        <title>BloodRUs - Query</title>
+        <title>Truck Tracker - Query</title>
         <link href="cool1.php" rel="stylesheet"/>
     </head>
 
@@ -15,7 +16,7 @@
 
             <h2>Database Query Based on Donor/Patient Last Name:</h2>
 
-            <form action="BloodRUs_Query_Database.php" method="post">
+            <form action="TruckTracker_Query_Database.php" method="post">
                 <select name = "choice">
                     <option value="Donor">Donor Query</option>
                     <option value="Patient">Patient Query</option>

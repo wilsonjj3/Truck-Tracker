@@ -1,7 +1,8 @@
 <html>
+    <!-- Slightly modified by Jesse-->
     <head>
         <meta charset="utf-8"/>
-        <title>BloodRUs - Reports</title>
+        <title>Truck Tracker - Reports</title>
         <link href="cool1.php" rel="stylesheet"/>
     </head>
 
@@ -16,7 +17,7 @@
         <h2>Create Report For All Nurses or All Patients</h2>
 
 
-        <form action="BloodRUs_Report_Database.php" method="post">
+        <form action="TruckTracker_Report_Database.php" method="post">
             <select name = "choice">
                 <option value="Nurse">Nurse Report</option>
                 <option value="Patient">Patient Report</option>

@@ -1,7 +1,8 @@
 <html>
+<!--  -->
     <head>
         <meta charset="utf-8"/>
-        <title>BloodRUs - Delete</title>
+        <title>Truck Tracker - Delete</title>
         <link href="cool1.php" rel="stylesheet"/>
     </head>
 
@@ -14,7 +15,7 @@
         <?php include 'header.php';?>
 
         <h2>Choose an entity to Delete:</h2>
-        <form action="BloodRUS_Delete.php" method="post">
+        <form action="TruckTracker_Delete.php" method="post">
             <select name="dropdown" >
                 <option value="">Select A Table</option>
                 <option value="patient">Patient</option>

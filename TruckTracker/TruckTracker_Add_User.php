@@ -163,133 +163,24 @@ function modify()
         case "patient":
             ?>
             <form method="post" action="patient.php">
-                <select name="patientMOD">
-                    <option value="">Select An Attribute</option>
-                    <option value="LastName">Last Name</option>
-                    <option value="FirstName">First Name</option>
-                    <option value="Circumstance">Circumstance/Reason</option>
-                </select>
-                <input type="number" name="patientIDMOD"placeholder="patient ID" required>
-                <input type="text" name="UpdatepatientIDMOD" placeholder="Update To">
-                <br />
-                <p>Only Select if Need to update Blood Type</p>
-                <select name="bloodtypeMOD">
-                    <option value="">Select a blood type</option>
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                </select>
-                <br /><br /><br />
-                <input type="submit" value="Submit">
-            </form>
-        <?php
-            break;
-        case "storageBank":
-?>
-<form method="post" action="storagebank.php">
-    <select name="storageMOD">
-        <option value="">Select An Attribute</option>
-        <option value="Street">Street</option>
-        <option value="city">City</option>
-        <option value="state">State</option>
-        <option value="postalcode">Postal Code</option>
-        <option value="onhand">onHand</option>
-    </select>
-    <input type="number" name="StoragebankIDMOD" placeholder="Storage ID" required>
-    <input type="text" name="UpdateStorageIDMOD" placeholder="Update To">
-    <input type="submit" value="Submit" >
-</form>
-<?php
-            break;
-        case "donor":
-            ?>
-
-            <form method="post" action="donor.php">
-                <select name="donorMOD">
-                    <option value="">Select An Attribute</option>
-                    <option value="LastName">LastName</option>
-                    <option value="FirstName">FirstName</option>
-                    <option value="nurseBadgeNumber" >Nurse Badge Number</option>
-                    <option value="bloodBagNumber" >Blood Bag Number</option>
-                    <option value="Gender" >Gender</option>
-                </select> <br />
-                <p>Only Select if Need to update Blood Type</p>
-                <select name="bloodtypeMOD">
-                    <option value="">Select a blood type</option>
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                </select>
-                <input type="number" name="donorIDMOD"placeholder="donorIDMOD" required>
-                <input type="text" name="UpdateDonorIDMOD" placeholder="Update To" required>
-                <input type="submit" value="Submit" >
-            </form>
-            <?php
-            break;
-        case "nurse":
-            ?>
-            <form method="post" action="nurse.php">
-                <select name="nurseMOD">
-                    <option value="">Select An Attribute</option>
-                    <option value="LastName">LastName</option>
-                    <option value="FirstName">FirstName</option>
-                    <option value="Street">Street</option>
-                    <option value="city">City</option>
-                    <option value="state">State</option>
-                    <option value="postalcode">Postal Code</option>
-                </select>
-                <input type="number" name="nurseIDMOD"placeholder="Nurse ID" required>
-                <input type="text" name="UpdateNurseIDMOD" placeholder="Update To" required>
-                <input type="submit" value="Submit" >
-            </form>
-            <?php
-            break;
-        case "blooddemand":
-            ?>
-        <form method="post" action="blooddemand.php" >
-            <select name="blooddemandMOD">
-                <option value="">Select An Attribute</option>
-                <option value="Amount Needed">Amount Needed</option>
-                <option value="In Demand"> In Demand</option>
+            <input type="text" name="lname" placeholder="Enter Trucker Last Name" required>
+            <input type="text" name="fname" placeholder="Enter Trucker First Name" required>
+            <select name="dropdown" >
+                <option value ="">Select a truck model</option>
+                <option value ="Freightliner">Freightliner</option>
+                <option value ="Kenworth">Kenworth</option>
+                <option value ="Peterbilt">Peterbilt</option>
+                <option value ="Volvo">Volvo</option>
+                <option value ="Mack">Mack</option>
+                <option value ="Western Star">Western Star</option>
+                <option value ="International Harvester">International Harvester</option>
             </select>
-            <select name="bloodtypeDemand">
-                <option value="">Select a Blood Type</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-            </select>
-            <input type="number" name="UpdateindemandIDMOD" placeholder="Update To" required>
-            <input type="number" name="BloodBankIDMOD" placeholder="BloodbankID" required>
+            <input type="text" name="Distance" placeholder="Distance to drive" required>
+            <input type="text" name="Route" placeholder="Route to take" >
+            <input type="hidden" name="add" value="add">
             <input type="submit" value="Submit" >
-        </form>
-<?php
-            break;
-    case "unitNumber":
-?>
-            <form method="post" action="unitNumber.php" >
-                <select name="unitNumberMOD">
-                    <option value="">Select An Attribute</option>
-                    <option value="Tested">Tested</option>
-                    <option value="Usable">Usable</option>
-                </select>
-                <input type="text" name="unitNumberMODID" placeholder="Blood Bad Number">
+            </form>
 
-                <input type="text" name="UpdateUnitNumberID" placeholder="Update To" required>
 
                 <input type="submit" value="Submit" >
             </form>

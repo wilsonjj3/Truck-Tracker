@@ -17,13 +17,13 @@
         <form action="TruckTracker_Add_User.php" method="post">
             <input type="submit" value="Add/Modify User" >
         </form>
-        <form action="BloodRUS_Delete.php" method="post">
+        <form action="TruckTracker_Delete.php" method="post">
             <input type="submit" value="Delete User" />
         </form>
-        <form action="BloodRUs_Query_Database.php" method="post" >
+        <form action="TruckTracker_Query_Database.php" method="post" >
             <input type="submit" value="Query The Database">
         </form>
-        <form action="BloodRUs_Report_Database.php" method="post">
+        <form action="TruckTracker_Report_Database.php" method="post">
             <input type="submit" value="Run a Report" >
         </form>
         <br />
