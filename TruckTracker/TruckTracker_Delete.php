@@ -14,13 +14,12 @@
         <?php include 'header.php';?>
 
         <h2>Choose an entity to Delete:</h2>
-        <form action="BloodRUS_Delete.php" method="post">
+        <form action="TruckTracker_Delete.php" method="post">
             <select name="dropdown" >
                 <option value="">Select A Table</option>
-                <option value="patient">Patient</option>
-                <option value="nurse">Nurse</option>
-                <option value="storageBank">Storage Bank</option>
-                <option value="donor">Donor</option>
+                <option value="Trucker">Trucker</option>
+                <option value="Manager">Manager</option>
+                <option value="Truck">Truck</option>
             </select> <br />
 
             <input type="number" name="primaryID" placeholder="Primary ID of Record">
@@ -40,23 +39,20 @@ if(isset($_POST['dropdown'])) {
     if (isset($_POST['primaryID'])) {
         $primaryID = $_POST['primaryID'];
 
-        $con = mysqli_connect("localhost", "test", "test", "bloodrus");
+        $con = mysqli_connect("localhost", "test", "test", "TruckTracker");
         if (!$con) {
             echo "Database is not connected";
         }
 
         switch ($dropdown) {
-            case "patient":
-                $condition = 'PatientID';
+            case "Trucker":
+                $condition = 'TruckerID';
                 break;
-            case "nurse":
-                $condition = 'NurseBadgeNumber';
+            case "Manager":
+                $condition = 'ManagerID';
                 break;
-            case "storageBank":
-                $condition = 'BloodBankID';
-                break;
-            case "donor":
-                $condition = "DonorID";
+            case "Truck":
+                $condition = 'TruckID';
                 break;
         }
         $sqldelete = "DELETE from $dropdown WHERE $condition = $primaryID";
@@ -67,7 +63,7 @@ if(isset($_POST['dropdown'])) {
 }
 function displayallData()
 {
-    $con = mysqli_connect("localhost", "test", "test", "bloodrus");
+    $con = mysqli_connect("localhost", "test", "test", "TruckTracker");
     if (!$con) {
         die("Could not Connect");
     }
