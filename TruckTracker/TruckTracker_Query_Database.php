@@ -13,12 +13,12 @@
 
             <?php include 'header.php';?>
 
-            <h2>Database Query Based on Donor/Patient Last Name:</h2>
+            <h2>Database Query Based on Manager/Trucker Last Name:</h2>
 
-            <form action="BloodRUs_Query_Database.php" method="post">
+            <form action="TruckTracker_Query_Database.php" method="post">
                 <select name = "choice">
-                    <option value="Donor">Donor Query</option>
-                    <option value="Patient">Patient Query</option>
+                    <option value="Manager">Manager Query</option>
+                    <option value="Trucker">Trucker Query</option>
                 </select>
                 Last Name: <input type="text" name="theName" />
                 <INPUT type="submit" value="Query Database">
@@ -36,40 +36,37 @@
 //based on "choice" variable in dropdown menu, call function to produce Query
 if (isset($_POST['choice'])){
 
-    if ($_POST['choice'] == "Donor") {
-        DonorQuery($_POST['theName']);
-    } else if ($_POST['choice'] == "Patient") {
-        PatientQuery($_POST['theName']);
+    if ($_POST['choice'] == "Trucker") {
+        TruckerQuery($_POST['theName']);
+    } else if ($_POST['choice'] == "Trucker") {
+        ManagerQuery($_POST['theName']);
     }
 
 }//end isset if
 
 
-function DonorQuery($lastName){
+function TruckerQuery($lastName){
 
     //Connect to DBMS
-    $con = mysqli_connect("localhost", "test", "test", "BloodRUs");
+    $con = mysqli_connect("localhost", "test", "test", "TruckTracker");
     if (!$con){
         die('could not connect: ' . mysqli_connect_error());
     }
 
     //create query that uses argument
-    $result = mysqli_query($con,"SELECT * FROM Donor WHERE LastName =  '$lastName'");
+    $result = mysqli_query($con,"SELECT * FROM Trucker WHERE LastName =  '$lastName'");
     $resultCheck = mysqli_num_rows($result);
 
     //print data that is the result of the query
     if($resultCheck > 0) {
 
-        echo "<p id = 'info'>------------------------------------Information for Donor(s) with last name <strong>[$lastName]</strong>:------------------------------------</p>";
+        echo "<p id = 'info'>------------------------------------Information for Trucker(s) with last name <strong>[$lastName]</strong>:------------------------------------</p>";
         echo "<table id = 'table'>
                 <tr>
-                   <th>DonorID</th>
+                   <th>TruckerID</th>
                    <th>Last Name</th>
                    <th>First Name</th>
-                   <th>Gender</th>
-                   <th>Blood Type</th>
-                   <th>Nurse Badge #</th>
-                   <th>Blood Bag #</th>             
+                   <th>HourlyRate</th>         
                 </tr>
         ";
 
@@ -77,14 +74,10 @@ function DonorQuery($lastName){
 
             echo "<tr>" .
 
-               "<td>" . $row['DonorID'] . "</td>" .
+               "<td>" . $row['TruckerID'] . "</td>" .
                 "<td>" . $row['LastName']  . "</td>" .
                 "<td>" . $row['FirstName']  . "</td>" .
-                "<td>" . $row['Gender']  . "</td>" .
-                "<td>" . $row['BloodType']  . "</td>" .
-                "<td>" . $row['NurseBadgeNumber']  . "</td>" .
-                "<td>" . $row['BloodBagNumber']  . "</td>"
-
+                "<td>" . $row['HourlyRate']  . "</td>"
                 . "</tr>";
 
         }
@@ -97,11 +90,11 @@ function DonorQuery($lastName){
     //close connection to database
     mysqli_close($con);
 
-}//end DonorQuery function
+}//end TruckerQuery function
 
 
 
-function PatientQuery($lastName)
+function ManagerQuery($lastName)
 {
 
     //Connect to DBMS
@@ -111,7 +104,7 @@ function PatientQuery($lastName)
     }
 
     //create query that uses argument
-    $result = mysqli_query($con,"SELECT * FROM Patient WHERE LastName = '$lastName'");
+    $result = mysqli_query($con,"SELECT * FROM Manager WHERE LastName = '$lastName'");
     $resultCheck = mysqli_num_rows($result);
 
     //print data that is the result of the query
@@ -120,11 +113,10 @@ function PatientQuery($lastName)
         echo "<p>------------------------------------Information for Patient(s) with Last Name <strong>[$lastName]</strong>:------------------------------------</p>";
         echo "<table id = 'table'>
                 <tr>
-                   <th>PatientID</th>
+                   <th>ManagerID</th>
                    <th>Last Name</th>
                    <th>First Name</th>
-                   <th>Blood Type</th>
-                   <th>Reason</th>                           
+                   <th>Commission</th>
                 </tr>
         ";
 
@@ -136,8 +128,7 @@ function PatientQuery($lastName)
                 "<td>" . $row['PatientID'] . "</td>" .
                 "<td>" . $row['LastName']  . "</td>" .
                 "<td>" . $row['FirstName']  . "</td>" .
-                "<td>" . $row['BloodType']  . "</td>" .
-                "<td>" . $row['Reason']  . "</td>"
+                "<td>" . $row['Commission']  . "</td>"
                 . "</tr>";
         }
     }else{
@@ -147,6 +138,6 @@ function PatientQuery($lastName)
     //close connection to database
     mysqli_close($con);
 
-}//end PatientQuery function
+}//end ManagerQuery function
 
 ?>

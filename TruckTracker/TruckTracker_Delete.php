@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>BloodRUs - Delete</title>
+        <title>Truck Tracker - Delete</title>
         <link href="cool1.php" rel="stylesheet"/>
     </head>
 
